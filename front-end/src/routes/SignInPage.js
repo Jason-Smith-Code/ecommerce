@@ -1,3 +1,7 @@
 export const SignInPage = () => {
-    return <p>SignInPage / register</p>
+    return (
+        <div className="content-container">
+            <p>SignInPage</p>
+        </div>
+    )
 }

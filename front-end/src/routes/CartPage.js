@@ -1,3 +1,7 @@
 export const CartPage = () => {
-    return <p>CartPage</p>
+    return (
+        <div className="content-container">
+            <p>CartPage</p>
+        </div>
+    )
 }

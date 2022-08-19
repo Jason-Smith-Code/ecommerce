@@ -1,3 +1,7 @@
 export const CheckOutPage = () => {
-    return <p>CheckOutPage</p>
+    return (
+        <div className="content-container">
+            <p>CheckOutPage</p>
+        </div>
+    )
 }
