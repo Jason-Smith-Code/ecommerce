@@ -10,3 +10,18 @@
     min-height: 800px;
     padding: 50px 10px;
 }
+
+section {
+    padding: 50px 0;
+}
+
+.products-grid {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-container {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(240, 239, 239);
+}
