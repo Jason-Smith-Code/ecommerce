@@ -16,15 +16,16 @@ import { PaymentsPage } from "../../routes/PaymentsPage";
 import { TermsConditionsPage } from "../../routes/TermsConditionsPage";
 
 function App() {
+
   return (
       <BrowserRouter>
         <Header />
         <Routes>
             <Route index element={<HomePage />} />
-            <Route path="home" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} exact/>
             <Route path="cart" element={<CartPage />} />
             <Route path="category" element={<CategoryPage />} />
-            <Route path="product" element={<ProductPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
             <Route path="checkout" element={<CheckOutPage />} />
             <Route path="sign-in" element={<SignInPage />} />
             <Route path="account" element={<UserAccountPage />} />
