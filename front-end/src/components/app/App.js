@@ -21,11 +21,10 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} exact />
         <Route path="cart" element={<CartPage />} />
         <Route path="category" element={<CategoryPage />} />
-        {/* Product page needs to know the product category, and the product it is displaying */}
-        <Route path="product-name" element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
         <Route path="checkout" element={<CheckOutPage />} />
         <Route path="sign-in" element={<SignInPage />} />
         <Route path="account" element={<UserAccountPage />} />

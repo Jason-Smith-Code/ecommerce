@@ -13,9 +13,9 @@ export const HomePage = () => {
           <p>{product.price}</p>
           <p>{product.description}</p>
           {/* add link to product page */}
-          <button>
-            <Link to={product.title}>View product</Link>
-          </button>
+          <Link to={`/product/${product._id}`}>
+            <button>View product</button>
+          </Link>
           <button>Add to cart</button>
         </div>
       );

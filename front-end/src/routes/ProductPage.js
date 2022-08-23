@@ -1,13 +1,7 @@
-export const ProductPage = ({ product }) => {
+export const ProductPage = () => {
   return (
     <div className="content-container">
-      <div>
-        <div>
-          <p>product page</p>
-          <img alt={product.title} src={product.image}></img>
-          <h1>{product.title}</h1>
-        </div>
-      </div>
+      <p>product._id</p>
     </div>
   );
 };
