@@ -1,7 +1,19 @@
-import { products } from "../data/Products";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
 export const HomePage = () => {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const {data} = await axios.get('/api/products')
+      setProducts(data)
+    }
+    fetchProducts()
+  }, [])
+
+
   function displayFeaturedProducts() {
     // if product is marked as featured, display them
     return products.map((product) => {
