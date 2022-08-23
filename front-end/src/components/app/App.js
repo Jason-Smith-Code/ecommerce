@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
-import { HomePage } from '../../routes/homePage';
+import { HomePage } from "../../routes/homePage";
 import { CartPage } from "../../routes/CartPage";
 import { CategoryPage } from "../../routes/CategoryPage";
 import { ProductPage } from "../../routes/ProductPage";
@@ -17,24 +17,25 @@ import { TermsConditionsPage } from "../../routes/TermsConditionsPage";
 
 function App() {
   return (
-      <BrowserRouter>
-        <Header />
-        <Routes>
-            <Route index element={<HomePage />} />
-            <Route path="home" element={<HomePage />} />
-            <Route path="cart" element={<CartPage />} />
-            <Route path="category" element={<CategoryPage />} />
-            <Route path="product" element={<ProductPage />} />
-            <Route path="checkout" element={<CheckOutPage />} />
-            <Route path="sign-in" element={<SignInPage />} />
-            <Route path="account" element={<UserAccountPage />} />
-            <Route path="delivery" element={<DeliveryPage />} />
-            <Route path="orders" element={<OrdersPage />} />
-            <Route path="payments" element={<PaymentsPage />} />
-            <Route path="terms-conditions" element={<TermsConditionsPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="home" element={<HomePage />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="category" element={<CategoryPage />} />
+        {/* Product page needs to know the product category, and the product it is displaying */}
+        <Route path="product-name" element={<ProductPage />} />
+        <Route path="checkout" element={<CheckOutPage />} />
+        <Route path="sign-in" element={<SignInPage />} />
+        <Route path="account" element={<UserAccountPage />} />
+        <Route path="delivery" element={<DeliveryPage />} />
+        <Route path="orders" element={<OrdersPage />} />
+        <Route path="payments" element={<PaymentsPage />} />
+        <Route path="terms-conditions" element={<TermsConditionsPage />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
