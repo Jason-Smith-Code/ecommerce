@@ -18,9 +18,11 @@ header {
     padding: 10px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     border-bottom: 1px solid black;
 }
+
 .header-main-right {
     display: flex;
     flex-direction: row;
@@ -34,4 +36,11 @@ header {
     background-color: black;
     padding: 10px;
     color: white;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
 }
