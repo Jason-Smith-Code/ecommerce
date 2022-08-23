@@ -1,0 +1,22 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "<!-- FRONT END -->",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node back-end/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jason-Smith-Code/ecommerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jason-Smith-Code/ecommerce/issues"
+  },
+  "homepage": "https://github.com/Jason-Smith-Code/ecommerce#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
