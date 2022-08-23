@@ -1,7 +1,7 @@
 export const ProductPage = () => {
     return (
         <div className="content-container">
-            <p>ProductPage</p>
+            <p>product._id</p>
         </div>
     )
 }
