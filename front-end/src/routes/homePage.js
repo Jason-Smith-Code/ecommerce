@@ -1,4 +1,5 @@
-import { products } from "../data/Products"
+import { products } from "../data/Products";
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
 
@@ -13,7 +14,7 @@ export const HomePage = () => {
                     <p>{product.price}</p>
                     <p>{product.description}</p>
                     {/* add link to product page */}
-                    <button>View product</button>
+                    <Link to={`/product/${product._id}`}><button>View product</button></Link>
                     <button>Add to cart</button>
                 </div>
             )
