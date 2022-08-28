@@ -1,32 +1,42 @@
-const express = require('express');
-// import products
-const products = require('./data/Products')
+// import express
+import express from "express";
 
+// import dotenv
+import dotenv from "dotenv";
+
+// import products
+import {products} from "./data/Products.js";
+
+dotenv.config();
 
 // initialize express
 const app = express();
 
-// declare port
-const port = 5000; 
+// get port from env file
+const PORT = process.env.PORT || 5000;
 
-app.listen(port, console.log(`server running on ${port}`))
+// listen on port
+app.listen(
+  PORT,
+  console.log(`server running in ${process.env.NODE_ENV} mode on ${PORT}`)
+);
 
 // if we get a response then
-app.get('/', (request, response) => {
-    // send response to front end
-    response.send('API is running')
-})
+app.get("/", (request, response) => {
+  // send response to front end
+  response.send("API is running...");
+});
 
 // get products
-app.get('/api/products', (request, response) => {
-    // convert the products to json
-    response.json(products)
-})
+app.get("/api/products", (request, response) => {
+  // convert the products to json
+  response.json(products);
+});
 
 // get single product
-app.get('/api/products/:id', (request, response) => {
-    // get the product by its id
-    const product = products.find(p => p._id === request.params.id)
-    // conver the products to json
-    response.json(product)
-})
+app.get("/api/products/:id", (request, response) => {
+  // get the product by its id
+  const product = products.find((p) => p._id === request.params.id);
+  // conver the products to json
+  response.json(product);
+});
