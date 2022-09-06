@@ -1,0 +1,4 @@
+models are used to determine the number of expected fields in the database.
+The model allows us to: 
+set required fields
+set data types for each field
