@@ -1,17 +1,11 @@
-// import express
 import express from "express";
+import connectDB from "./config/db.js";
+import products from "./data/Products.js";
 
-// import dotenv
-import dotenv from "dotenv";
-
-// import products
-import {products} from "./data/Products.js";
-
-dotenv.config();
+connectDB();
 
 // initialize express
 const app = express();
-
 // get port from env file
 const PORT = process.env.PORT || 5000;
 
