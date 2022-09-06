@@ -23,8 +23,9 @@ axios
 express
 
 // packages to install for development in front and back end (root)
-dotenv - 
+dotenv -
 nodemon - tool to watch server, so we dont need to reset after changes
+mongoose - object modelling for node.js
 concurrently - tool which allows us to run both back and front end at the same time.
 add to scripts
 "server": "nodemon back-end/server",
@@ -32,6 +33,5 @@ add to scripts
 "dev" : "concurrently \"npm run server\" \"npm run client\" "
 
 now to run the app, we just need to call "npm run dev"
-
 
 using inmport instead of require - add "type" : "module" to package json
