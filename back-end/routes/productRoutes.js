@@ -32,7 +32,8 @@ router.get(
       // conver the products to json
       response.json(product);
     } else {
-      response.status(404).json({ message: "product agasgadg dnot found" });
+      response.status(404);
+      throw new Error("Product not found")
     }
   })
 );
