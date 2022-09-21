@@ -1,6 +1,6 @@
 const products = [
   {
-    title: "product 1",
+    title: "product 9",
     brand: "brand name",
     price: 25.42,
     description: "a really nice product",
