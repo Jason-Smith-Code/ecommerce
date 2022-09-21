@@ -1,48 +1,29 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-import axios from 'axios'
+import React, { useEffect} from "react";
+import { fetchProductList} from "../features/products/productActions";
+import {getProductList} from '../features/products/productsSlice'
+import { useDispatch, useSelector } from "react-redux";
 
 export const HomePage = () => {
-  const [products, setProducts] = useState([])
+  const dispatch = useDispatch();
+  const productList = useSelector(getProductList);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const {data} = await axios.get('/api/products')
-      setProducts(data)
-    }
-    fetchProducts()
-  }, [])
+    dispatch(fetchProductList())
+  }, [dispatch])
 
 
-  function displayFeaturedProducts() {
-    // if product is marked as featured, display them
-    return products.map((product) => {
-      return (
-        <div className="product-container" key={product._id}>
-          {/* Wrap image in link */}
-          <img alt="product" width="200px" src={product.image}></img>
-          <p>{product.title}</p>
-          <p>{product.price}</p>
-          <p>{product.description}</p>
-          {/* add link to product page */}
-          <Link to={`/product/${product._id}`}>
-            <button>View product</button>
-          </Link>
-          <button>Add to cart</button>
-        </div>
-      );
-    });
-  }
+
 
   return (
     <div className="content-container">
       <section>
         <h1>Store Name</h1>
+        <p>products amount = {productList.length}</p>
         <p>Some text about the business</p>
       </section>
       <section>
         <h2>Featured products</h2>
-        <div className="products-grid">{displayFeaturedProducts()}</div>
+        <div className="products-grid"></div>
       </section>
     </div>
   );
