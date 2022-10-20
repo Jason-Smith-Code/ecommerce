@@ -28,6 +28,8 @@ export const Footer = () => {
                 </div>
                 <div className='footer-block'>
                     <h4 className="footer-heading">Navigation</h4>
+                    <Link to="/">Main</Link>
+                    <Link to="/shop">Shop</Link>
                     <Link to="/cart">Cart</Link>
                     <Link to="/checkout">Checkout</Link>
                 </div>
