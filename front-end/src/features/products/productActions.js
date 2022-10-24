@@ -9,7 +9,7 @@ import axios from "axios";
 export const fetchProductList = () => async (dispatch) => {
   try {
     // dispatch the request
-    dispatch(productListRequest);
+    dispatch(productListRequest());
     // store the data from the api
     const { data } = await axios.get("/api/products");
     // dispatch the data
