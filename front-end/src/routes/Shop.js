@@ -39,6 +39,3 @@ export const Shop = () => {
     </div>
   );
 };
-
-
-// add RRP stat to each item in database
