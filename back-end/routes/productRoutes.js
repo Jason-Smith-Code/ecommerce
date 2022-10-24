@@ -33,8 +33,49 @@ router.get(
       response.json(product);
     } else {
       response.status(404);
-      throw new Error("Product not found")
+      throw new Error("Product not found");
     }
+  })
+);
+
+router.use(async (req, res, next) => {
+  console.log("used");
+  next();
+});
+
+// Delete a product
+// Update an existing product
+
+// @description :   Create product
+// @route :         PUT /api/products
+// @access :        Private
+
+// create a default product
+router.put(
+  "/",
+  asyncHandler(async (request, response) => {
+    const product = new Product({
+      user: "6317ab8b297116827daa4d5c",
+      image: "/images/sonyheadphones1.jpg",
+      brand: "brand name",
+      category: "default",
+      title: "Product Name ",
+      description: "description",
+      price: 0.0,
+      rrp: 0.0,
+      stock: 0,
+      active: false,
+    });
+    const createdProduct = await product.save();
+    response.status(201).json(createdProduct);
+    console.log(response);
+  })
+);
+
+router.post(
+  "/admin/create-product",
+  asyncHandler(async (request, response) => {
+    console.log("post");
   })
 );
 
