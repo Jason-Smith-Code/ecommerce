@@ -1,0 +1,12 @@
+.form-row {
+    width: 100%;
+    display: flex
+}
+
+.form-col-1 {
+    min-width: 100px;
+}
+
+input, textarea  {
+    padding: 3px;   
+}
