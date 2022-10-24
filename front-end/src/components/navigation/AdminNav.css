@@ -1,7 +1,16 @@
 #admin-menu {
     height: 100vh;
     padding: 20px;
-    position: absolute;
     background-color: rgb(222, 222, 222);
+    width:fit-content;
+}
 
+ul {
+    list-style: none;
+}
+
+.admin-link {
+    color: black;
+    display: block;
+    padding: 10px 0px;
 }
