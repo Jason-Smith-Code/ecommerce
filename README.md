@@ -7,7 +7,6 @@ create cart
 create registration / sign in
 create user privilages
 create admin dashboard
-create error handling
 
 <!-- FRONT END PACKAGES -->
 
