@@ -2,7 +2,7 @@ import express from "express";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import dotenv from "dotenv";
-import {notFound, errorHandler} from './middleware/handleErrors.js';
+import { notFound, errorHandler } from "./middleware/handleErrors.js";
 dotenv.config();
 
 connectDB();
@@ -28,6 +28,6 @@ app.get("/", (request, response) => {
 });
 
 // Error middleware - must be written last.
-app.use(notFound)
+app.use(notFound);
 
 app.use(errorHandler);
