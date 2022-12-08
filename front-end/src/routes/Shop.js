@@ -1,16 +1,18 @@
 import { ProductList } from "../components/product/ProductList";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductList } from "../features/products/productActions";
+import { fetchProductList } from "../middleware/productActions";
 import { getProductList } from "../features/products/productsSlice";
 import "../assets/svg/filter-solid.svg";
+import { Loader } from "../components/Loader/Loader";
 
 export const Shop = () => {
-  const productList = useSelector(getProductList);
   const dispatch = useDispatch();
 
+  const productList = useSelector(getProductList);
+
   // map through products
-  const mappedProductList = productList.map((product) => {
+  const mappedProductList = productList.products.map((product) => {
     return <ProductList key={product._id} product={product} />;
   });
 
@@ -34,7 +36,13 @@ export const Shop = () => {
       </div>
       <div>
         <h2>Products</h2>
-        <div className="products-grid">{mappedProductList}</div>
+        {productList.loading ? (
+          <Loader text="Loading products" />
+        ) : productList.error ? (
+          <p>{productList.error}</p>
+        ) : (
+          <div className="products-grid">{mappedProductList}</div>
+        )}
       </div>
     </div>
   );
