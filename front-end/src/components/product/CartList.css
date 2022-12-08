@@ -1,0 +1,7 @@
+.cart-list {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+}
