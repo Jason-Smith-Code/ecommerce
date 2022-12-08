@@ -1,22 +1,25 @@
 import React, { useEffect } from "react";
-import { fetchProductList } from "../features/products/productActions";
-import { getProductList } from "../features/products/productsSlice";
+import { fetchProductList } from "../middleware/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { ProductList } from "../components/product/ProductList";
+import { Loader } from "../components/Loader/Loader";
+import { getProductList } from "../features/products/productsSlice";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
+
   const productList = useSelector(getProductList);
+
+  // map through products, if product.featured === true then display the product
+  const mappedProductList = productList.products.map((product) => {
+    return <ProductList key={product._id} product={product} />;
+  });
 
   useEffect(() => {
     // since this page is displaying products, we need to fetch them
+    // at a later ppoint this list needs to be featured products only
     dispatch(fetchProductList());
   }, [dispatch]);
-
-  // map through products, if product.featured === true then display the product
-  const mappedProductList = productList.map((product) => {
-    return <ProductList key={product._id} product={product} />;
-  });
 
   return (
     <div className="content-container">
@@ -26,7 +29,13 @@ export const HomePage = () => {
       </section>
       <section>
         <h2>Featured products</h2>
-        <div className="products-grid">{mappedProductList}</div>
+        {productList.loading ? (
+          <Loader text="Loading featured products" />
+        ) : productList.error ? (
+          <p>{productList.error}</p>
+        ) : (
+          <div className="products-grid">{mappedProductList}</div>
+        )}
       </section>
     </div>
   );
