@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: [],
+  loading: true,
   error: "",
 };
 
@@ -25,7 +26,8 @@ export const productsSlice = createSlice({
 });
 
 // function to get the product list
-export const getProductList = (state) => state.productList.products;
+// export const getProductList = (state) => state.productList.products;
+export const getProductList = (state) => state.productList;
 
 // Action creators are generated for each case reducer function
 export const { productListRequest, productListSuccess, productListFail } =
