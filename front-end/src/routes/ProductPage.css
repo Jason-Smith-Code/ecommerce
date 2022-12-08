@@ -1,0 +1,22 @@
+/* Quanity buttons */
+.add-to-cart-quantity {
+    display: flex;
+    align-items: center;
+}
+
+
+.quantity-button {
+    box-shadow: none;
+}
+
+.quantity-left {
+    border-radius: 20px 0px 0px 20px
+}
+
+.quantity-right {
+    border-radius: 0px 20px 20px 0px
+}
+
+.quantity-number {
+    padding: 0 20px;
+}
